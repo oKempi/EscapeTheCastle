@@ -7,6 +7,7 @@ public class Room {
     protected String name;
     protected String description;
     protected ArrayList<Item> items = new ArrayList<>();
+    protected int optionNum;
 
     public int getID(){
         return id;
@@ -17,4 +18,5 @@ public class Room {
     }
     public void printOptions(){}
     public void act(int option){}
+    public int getOptionNum(){return optionNum;}
 }

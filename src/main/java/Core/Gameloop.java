@@ -16,17 +16,18 @@ public class Gameloop {
 
         //game starts
         while(!World.gameOver){
-            //TODO print out name + description of room to know where the player is
-            CLI.print("========================");
+            CLI.print(" ");
+            CLI.print(" ");
+            CLI.print(" ");
             World.aboutRoom();
             World.printOptions();
             World.actOptions(Integer.parseInt(CLI.getInput()));
-            //TODO print overview of what happened (do in room)
             if(World.gameEnded){
                 CLI.print("You won by " + World.cause);
                 CLI.getInput();
                 System.exit(0);
             }
+            CLI.print("========================");
         }//ends the game
         CLI.print(World.cause);
         CLI.getInput();

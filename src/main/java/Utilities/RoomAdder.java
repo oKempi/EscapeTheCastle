@@ -2,8 +2,7 @@ package Utilities;
 
 import Core.World;
 import Enviroment.Room;
-import Enviroment.Rooms.Library;
-import Enviroment.Rooms.MainHall;
+import Enviroment.Rooms.*;
 
 import java.util.ArrayList;
 
@@ -13,6 +12,10 @@ public class RoomAdder {//purely made for the purpose of adding rooms for the ma
     public static void main(String[] args){
         rooms.add(new MainHall());
         rooms.add(new Library());
+        rooms.add(new Balcony());
+        rooms.add(new KnightsHallSmall());
+        rooms.add(new KnightsHallBig());
+        rooms.add(new SecretCorridor());
         //dumps them into World.java
         World.addRooms(rooms);
     }

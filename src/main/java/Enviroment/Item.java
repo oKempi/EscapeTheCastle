@@ -4,7 +4,7 @@ public class Item {
     protected String name;
     protected String description;
 
-    public String toString(){ //TODO make for each
+    public String toString(){
         return name + " - " + description;
     }
 
