@@ -21,9 +21,11 @@ public class Balcony extends Room {
     public void act(int option){
         if(option == 1){
             World.movePlayer(1);
+            return;
         }
         if(option == 2){
             World.movePlayer(3);
+            return;
         }
         if(option == 3){
             if(World.items.stream().anyMatch(item -> item instanceof Seeds)){

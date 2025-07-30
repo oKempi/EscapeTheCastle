@@ -21,9 +21,11 @@ public class KnightsHallBig extends Room { //here, you can move the sword
     public void act(int option){
         if(option == 1){
             World.movePlayer(0);
+            return;
         }
         if(option == 2){
-            World.movePlayer(7);//not made yet!
+            World.movePlayer(7);
+            return;
         }
         if(option == 3){
             int chance = new Random().nextInt(6);

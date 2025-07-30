@@ -23,14 +23,17 @@ public class KnightsHallSmall extends Room{
     public void act(int option){
         if(option == 1){
             World.movePlayer(1);
+            return;
         }
         if(option == 2){
-            World.movePlayer(8);//not made yet!
+            World.movePlayer(8);
+            return;
         }
         if(option == 3){
             World.addItem(new Sword());
             World.hasSword = true;
             CLI.print("You now have a sword.");
+            return;
         }
         if(option == 4 && World.isFireplaceOpen()){
             World.movePlayer(5);//not made yet!

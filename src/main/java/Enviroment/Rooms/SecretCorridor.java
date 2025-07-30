@@ -1,5 +1,6 @@
 package Enviroment.Rooms;
 import Core.World;
+import Enviroment.Items.MysteriousPaper;
 import Enviroment.Room;
 import UI.CLI;
 
@@ -12,17 +13,20 @@ public class SecretCorridor extends Room {
     public void printOptions(){
         CLI.print("[1] Go back through the fireplace back to the small knight's hall");
         CLI.print("[2] Continue to the laboratory");
-        CLI.print("[3] Inspect the library"); //TODO think of (and implement) third option
+        CLI.print("[3] Take a mysterious paper from the ground");
     }
     public void act(int option){
         if(option == 1){
             World.movePlayer(3);
+            return;
         }
         if(option == 2){
             World.movePlayer(6);
+            return;
         }
         if(option == 3){
-            return;
+            World.addItem(new MysteriousPaper());
+            CLI.print("You took the paper from the ground.");
         }
     }
     public void print(){

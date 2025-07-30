@@ -9,12 +9,11 @@ public class Gameloop {
             RoomAdder.main(args);
         }catch(Exception e){System.out.println("Error while trying to add rooms");System.exit(0);}
 
-        //maybe wait in between each text for a while or some :D
         CLI.print("An angry mob just chased you into some castle.");
         CLI.print("You don´t have any idea where you are nor why they were chasing you...");
         CLI.print("Only thing you know is that you want to get out of there before they can get to you!");
 
-        //game starts
+        //game starts here
         while(!World.gameOver){
             CLI.print(" ");
             CLI.print(" ");
@@ -29,7 +28,7 @@ public class Gameloop {
             }
             CLI.print("========================");
         }//ends the game
-        CLI.print(World.cause);
+        CLI.print(World.cause); //TODO enhance the loosing a little bit by making it less generic (relative to winning and dialogue)
         CLI.getInput();
         System.exit(0);
     }

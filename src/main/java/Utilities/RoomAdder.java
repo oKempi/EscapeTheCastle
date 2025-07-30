@@ -16,6 +16,7 @@ public class RoomAdder {//purely made for the purpose of adding rooms for the ma
         rooms.add(new KnightsHallSmall());
         rooms.add(new KnightsHallBig());
         rooms.add(new SecretCorridor());
+        rooms.add(new Laboratory());
         //dumps them into World.java
         World.addRooms(rooms);
     }

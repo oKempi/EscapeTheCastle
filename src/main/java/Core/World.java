@@ -34,7 +34,7 @@ public class World {
                     for(int i = 1; i < items.size() + 1; i++){
                         CLI.print("[" + i + "] " + items.get(i-1).toString());
                     }
-                }else{CLI.print("The inventory is empty");}
+                }else{CLI.print("Your inventory is empty");}
                 printOptions();
                 actOptions(Integer.parseInt(CLI.getInput()));
             }

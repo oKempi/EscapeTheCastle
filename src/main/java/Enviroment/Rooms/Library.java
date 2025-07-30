@@ -26,9 +26,11 @@ public class Library extends Room {
     public void act(int option){
         if(option == 1){
             World.movePlayer(2);
+            return;
         }
         if(option == 2){
             World.movePlayer(0);
+            return;
         }
         if(option == 3){
             int chance = new Random().nextInt(2);
@@ -36,9 +38,11 @@ public class Library extends Room {
                 World.addItem(book);
                 gotBook = true;
                 CLI.print("You found a book!");
+                return;
             }
             if(chance == 0){
                 CLI.print("You haven't found anything");
+                return;
             }
         }
         if(option == 4){
