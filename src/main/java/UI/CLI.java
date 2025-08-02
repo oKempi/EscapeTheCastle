@@ -7,13 +7,9 @@ public class CLI {
     public static void print(String text){
         System.out.println(text);
     }
-    public static void printRoom(String name, String description){ //might delete
-        print("You are in " + name);
-        print(description);
-    }
-    public static String getInput(){ //TODO maybe add try catch statement for overflowing numbers
-        return scanner.nextLine();
-    }
+    public static int getInput(){
+        return Integer.parseInt(scanner.nextLine());
+    } //TODO return int instead of String
     public static void err(String message){
         print("[!]Error: " + message);
     }

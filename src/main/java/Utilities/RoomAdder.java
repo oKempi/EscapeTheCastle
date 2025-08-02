@@ -7,7 +7,7 @@ import Enviroment.Rooms.*;
 import java.util.ArrayList;
 
 public class RoomAdder {//purely made for the purpose of adding rooms for the main code to not look messy
-    private static ArrayList<Room> rooms = new ArrayList<>();
+    private static final ArrayList<Room> rooms = new ArrayList<>();
 
     public static void main(String[] args){
         rooms.add(new MainHall());

@@ -1,13 +1,15 @@
 package Enviroment.Rooms;
 import Core.World;
+import Enviroment.Item;
+import Enviroment.Items.Key;
 import Enviroment.Items.MysteriousPaper;
 import Enviroment.Room;
 import UI.CLI;
 
 public class SecretCorridor extends Room {
-    private int id = 5;
-    private String name = "Secret corridor";
-    private String description = "A secret corridor connecting the small knight's hall fireplace and laboratory.";
+    private final int id = 5;
+    private final String name = "Secret corridor";
+    private final String description = "A secret corridor connecting the small knight's hall fireplace and laboratory.";
     private final int optionNum = 4;
 
     public void printOptions(){
@@ -21,7 +23,11 @@ public class SecretCorridor extends Room {
             return;
         }
         if(option == 2){
-            World.movePlayer(6);
+            for(Item item : World.items){
+                if(item instanceof Key){
+                    World.movePlayer(6);
+                }else{CLI.print("The door is locked.");}
+            }
             return;
         }
         if(option == 3){

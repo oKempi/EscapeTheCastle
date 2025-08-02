@@ -2,7 +2,7 @@ package Core;
 import UI.CLI;
 import Utilities.RoomAdder;
 
-public class Gameloop {
+public class Gameloop{
     public static void main(String[] args){
         //adds all the rooms
         try{
@@ -20,7 +20,7 @@ public class Gameloop {
             CLI.print(" ");
             World.aboutRoom();
             World.printOptions();
-            World.actOptions(Integer.parseInt(CLI.getInput()));
+            World.actOptions(CLI.getInput());
             if(World.gameEnded){
                 CLI.print("You won by " + World.cause);
                 CLI.getInput();
@@ -28,7 +28,8 @@ public class Gameloop {
             }
             CLI.print("========================");
         }//ends the game
-        CLI.print(World.cause); //TODO enhance the loosing a little bit by making it less generic (relative to winning and dialogue)
+        CLI.print("You lost because");
+        CLI.print(World.cause); //hopefully interesting enough 少
         CLI.getInput();
         System.exit(0);
     }

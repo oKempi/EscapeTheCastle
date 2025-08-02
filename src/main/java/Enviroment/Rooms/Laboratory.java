@@ -1,8 +1,12 @@
 package Enviroment.Rooms;
 import Core.World;
+import Enviroment.Item;
+import Enviroment.Items.Book;
 import Enviroment.Items.MercuryBottle;
 import Enviroment.Room;
 import UI.CLI;
+
+import java.util.ArrayList;
 
 public class Laboratory extends Room {
     private int id = 6;
@@ -25,18 +29,32 @@ public class Laboratory extends Room {
             CLI.print("You found a heavy, relative to its size, bottle of some metallic, silver coloured liquid.");
             return;
         }
-        if(option == 3){ //TODO complete the menu
+        if(option == 3){ //TODO complete the menu; might need to rethink and draw? :D -\(ツ)/-
+            ArrayList<Item> putIn = new ArrayList<>();
             CLI.print("Alchemy table:");
-            CLI.print("You have exactly 3 spots in which you can put any of your items.");
+            CLI.print("You have exactly 2 spots in which you can put any of your items.");
             if(!World.items.isEmpty()){
+                CLI.print("[0] Stop interacting with the alchemy table");
                 for(int i = 1; i < World.items.size(); i++){
                     CLI.print("[" + i + "]" + World.items.get(i - 1));
+                }//put in for loop?
+                for(int i = 0; i < 3; i++){
+                    int choice = CLI.getInput();
+                    if(choice == 0){
+                        return;
+                    }
+                    else{putIn.add(World.items.get(choice));} //TODO problem if bigger number / any negative also disallow duplicates
                 }
-                String choice = CLI.getInput();
-                if(choice.equalsIgnoreCase("0")){
-                    return;
+                int success = 0;
+                for (Item item : putIn) {
+                    if(item instanceof MercuryBottle || item instanceof Coin ) { //TODO make it only check whether they have the book + contains
+                        success++;
+                    }
+                    if(success == 2){
+                        return;// add the gold/potion to player's inventory
+                    }
                 }
-            }
+            }else{CLI.print("You unfortunately don't have any items.");}
         }
     }
     public void print(){

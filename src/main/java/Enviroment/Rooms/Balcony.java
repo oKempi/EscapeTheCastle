@@ -41,6 +41,7 @@ public class Balcony extends Room {
             CLI.print("You are at the " + name);
             CLI.print(description);
             CLI.print(condorText);
+            condor =  true;
         }
         else {
             CLI.print("You are at the " + name);

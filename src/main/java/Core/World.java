@@ -1,7 +1,6 @@
 package Core;
 import Enviroment.Item;
 import Enviroment.Room;
-import Enviroment.Rooms.KnightsHallSmall;
 import UI.CLI;
 import java.util.ArrayList;
 
@@ -36,17 +35,17 @@ public class World {
                     }
                 }else{CLI.print("Your inventory is empty");}
                 printOptions();
-                actOptions(Integer.parseInt(CLI.getInput()));
+                actOptions(CLI.getInput());
             }
             rooms.get(currentRoom).act(option);
-        }else{CLI.err("The number is out of range! Try again");actOptions(Integer.parseInt(CLI.getInput()));}
+        }else{CLI.err("The number is out of range! Try again");actOptions(CLI.getInput());}
     }
 
     public static void addRooms(ArrayList<Room> r){
         rooms = r;
     }
     public static void movePlayer(int roomID){
-        if(roomID == -1){;
+        if(roomID == -1){
             gameOver = true;
             return;
         }
