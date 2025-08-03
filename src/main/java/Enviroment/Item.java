@@ -7,5 +7,8 @@ public class Item {
     public String toString(){
         return name + " - " + description;
     }
+    public String returnName(){
+        return name;
+    }
 
 }

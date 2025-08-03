@@ -15,6 +15,7 @@ public class World {
     private static int currentRoom = 0; //so that the player always starts here and can move from there
     public static ArrayList<Item> items = new ArrayList<>(); //public so that rooms can easily check if player has certain item
     public static Boolean hasSword = false;
+    public static Boolean hasBook = false;
 
     public static void aboutRoom(){
         rooms.get(currentRoom).print();

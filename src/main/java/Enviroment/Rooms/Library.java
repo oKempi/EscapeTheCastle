@@ -37,6 +37,7 @@ public class Library extends Room {
             if(chance == 1 && !gotBook){
                 World.addItem(book);
                 gotBook = true;
+                World.hasBook = true;
                 CLI.print("You found a book!");
                 return;
             }

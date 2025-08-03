@@ -7,9 +7,22 @@ public class CLI {
     public static void print(String text){
         System.out.println(text);
     }
+
     public static int getInput(){
-        return Integer.parseInt(scanner.nextLine());
-    } //TODO return int instead of String
+        int x = 0;
+        boolean isError = false;
+        do {
+            try {
+                isError = false;
+                x = Integer.parseInt(scanner.nextLine());
+            } catch (Exception e){
+                isError = true;
+                err("Illegal input. Try again!");
+            }
+        } while (isError);
+        return x;
+    }
+
     public static void err(String message){
         print("[!]Error: " + message);
     }

@@ -2,6 +2,7 @@ package Enviroment.Rooms;
 import Core.World;
 import Enviroment.Item;
 import Enviroment.Items.Book;
+import Enviroment.Items.MagicalPotion;
 import Enviroment.Items.MercuryBottle;
 import Enviroment.Room;
 import UI.CLI;
@@ -40,18 +41,21 @@ public class Laboratory extends Room {
                 }//put in for loop?
                 for(int i = 0; i < 3; i++){
                     int choice = CLI.getInput();
-                    if(choice == 0){
+                    if(choice == 0 || choice < 0 || choice - 1 > World.items.size()){
                         return;
                     }
-                    else{putIn.add(World.items.get(choice));} //TODO problem if bigger number / any negative also disallow duplicates
+                    else if (putIn.contains(World.items.get(choice - 1))){
+                        CLI.print("Item was already used");
+                    }
+                    else{putIn.add(World.items.get(choice - 1)); CLI.print("Added: " + World.items.get(choice - 1));}
                 }
                 int success = 0;
                 for (Item item : putIn) {
-                    if(item instanceof MercuryBottle || item instanceof Coin ) { //TODO make it only check whether they have the book + contains
+                    if(item instanceof MercuryBottle || item instanceof Coin && World.hasBook) {
                         success++;
                     }
                     if(success == 2){
-                        return;// add the gold/potion to player's inventory
+                        World.addItem(new MagicalPotion());
                     }
                 }
             }else{CLI.print("You unfortunately don't have any items.");}

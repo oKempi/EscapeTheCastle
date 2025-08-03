@@ -16,7 +16,7 @@ public class MainHall extends Room{
     }
     public void act(int option){
         if(option == 1){
-            World.cause = "you opened the door to go and calm the angry mob down. Instead they they immediately pierced you with pitchforks and other farming equipment...";
+            World.cause = "you opened the door to go and calm the angry mob down. Instead they they immediately pierced you with knives or axes!";//když se u nás chlapi poperou reference ;)
             World.movePlayer(-1);
             return;
         }
