@@ -13,9 +13,7 @@ public class Library extends Room {
     private int id = 1;
     private String name = "Royal library";
     private String description = "The library is giant, with thousands of bookshelves and even more books. You might find something of interest in here!";
-    private ArrayList<Item> items = new ArrayList<Item>(){{add(book);}};
     private final int optionNum = 5;
-    private Boolean gotBook = false;
 
     public void printOptions(){
         CLI.print("[1] Go through beautiful glass doors onto balcony");
@@ -34,16 +32,13 @@ public class Library extends Room {
         }
         if(option == 3){
             int chance = new Random().nextInt(2);
-            if(chance == 1 && !gotBook){
+            if(World.hasBook || chance == 0){
+                CLI.print("You haven't found anything");
+            }
+            else{
                 World.addItem(book);
-                gotBook = true;
                 World.hasBook = true;
                 CLI.print("You found a book!");
-                return;
-            }
-            if(chance == 0){
-                CLI.print("You haven't found anything");
-                return;
             }
         }
         if(option == 4){

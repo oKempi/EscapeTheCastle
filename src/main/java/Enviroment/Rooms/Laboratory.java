@@ -1,13 +1,13 @@
 package Enviroment.Rooms;
 import Core.World;
 import Enviroment.Item;
-import Enviroment.Items.Book;
-import Enviroment.Items.MagicalPotion;
+import Enviroment.Items.Gold;
 import Enviroment.Items.MercuryBottle;
 import Enviroment.Room;
 import UI.CLI;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Laboratory extends Room {
     private int id = 6;
@@ -30,8 +30,8 @@ public class Laboratory extends Room {
             CLI.print("You found a heavy, relative to its size, bottle of some metallic, silver coloured liquid.");
             return;
         }
-        if(option == 3){ //TODO complete the menu; might need to rethink and draw? :D -\(ツ)/-
-            ArrayList<Item> putIn = new ArrayList<>();
+        if (option == 3){
+            List<Item> putIn = new ArrayList<>();
             CLI.print("Alchemy table:");
             CLI.print("You have exactly 2 spots in which you can put any of your items.");
             if(!World.items.isEmpty()){
@@ -40,7 +40,7 @@ public class Laboratory extends Room {
                     CLI.print("[" + i + "]" + World.items.get(i - 1));
                 }//put in for loop?
                 for(int i = 0; i < 3; i++){
-                    int choice = CLI.getInput();
+                    int choice = CLI.getInput();//TODO refactor this to make it all possible and working!
                     if(choice == 0 || choice < 0 || choice - 1 > World.items.size()){
                         return;
                     }
@@ -55,7 +55,7 @@ public class Laboratory extends Room {
                         success++;
                     }
                     if(success == 2){
-                        World.addItem(new MagicalPotion());
+                        World.addItem(new Gold());
                     }
                 }
             }else{CLI.print("You unfortunately don't have any items.");}

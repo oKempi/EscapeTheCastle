@@ -8,7 +8,7 @@ public class World {
     private static ArrayList<Room> rooms = new ArrayList<>();
     public static Boolean gameEnded = false; //eg. win
     public static Boolean gameOver = false; //eg. death
-    public static String cause = null; //multipurpose for both game over AND winning
+    public static String cause = null; //multipurpose for both game over && winning
     private static Boolean fireplaceOpen = false;
 
     //player
@@ -57,6 +57,12 @@ public class World {
             return;
         }
         items.add(item);
+    }
+    public static void removeItem(Item item){
+        if(items.contains(item)){
+            items.remove(item);
+        }
+        else {CLI.err("Item does not exist!");}
     }
     public static void openFireplace(){
         fireplaceOpen = true;
