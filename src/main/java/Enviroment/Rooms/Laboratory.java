@@ -39,9 +39,9 @@ public class Laboratory extends Room {
                     CLI.print("[" + i + "]" + World.items.get(i - 1));
                 }//put in for loop?
                 for(int i = 0; i < 3; i++){
-                    int choice = CLI.getInput();//TODO refactor this to make it all possible and working!
+                    int choice = CLI.getInput(1);//TODO refactor this to make it all possible and working!
 					//from here
-                    if(choice == 0 || choice < 0 || choice - 1 > World.items.size()){
+                    if(choice < 0 || choice - 1 > World.items.size()){ //maybe use do while instead
                         return;
                     }
                     else if (putIn.contains(World.items.get(choice - 1))){
