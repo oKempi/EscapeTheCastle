@@ -23,6 +23,23 @@ public class CLI {
         return x;
     }
 
+	public static int getInput(int mode){
+		int x = 0;
+        boolean isError = false;
+		if(mode < 0 || mode == 0 || mode > 0){
+			do {
+            	try {
+                	isError = false;
+                	x = Integer.parseInt(scanner.nextLine());
+            	} catch (Exception e){
+                	isError = true;
+                	err("Illegal input. Try again!");
+            	}
+        	} while (isError);
+        	return x
+		}
+	}
+
     public static void err(String message){
         print("[!]Error: " + message);
     }
