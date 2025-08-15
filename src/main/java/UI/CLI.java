@@ -35,7 +35,7 @@ public class CLI {
                 	isError = true;
                 	err("Illegal input. Try again!");
             	}
-        	} while (isError);
+        	} while (isError || x == 0);
         	return x
 		}
 	}
