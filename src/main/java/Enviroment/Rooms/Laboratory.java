@@ -5,7 +5,6 @@ import Enviroment.Items.Gold;
 import Enviroment.Items.MercuryBottle;
 import Enviroment.Room;
 import UI.CLI;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +40,7 @@ public class Laboratory extends Room {
                 }//put in for loop?
                 for(int i = 0; i < 3; i++){
                     int choice = CLI.getInput();//TODO refactor this to make it all possible and working!
+					//from here
                     if(choice == 0 || choice < 0 || choice - 1 > World.items.size()){
                         return;
                     }
@@ -48,6 +48,7 @@ public class Laboratory extends Room {
                         CLI.print("Item was already used");
                     }
                     else{putIn.add(World.items.get(choice - 1)); CLI.print("Added: " + World.items.get(choice - 1));}
+					//to here
                 }
                 int success = 0;
                 for (Item item : putIn) {
