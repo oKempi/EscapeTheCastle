@@ -3,7 +3,7 @@ import UI.CLI;
 import java.util.ArrayList;
 
 public class Room {
-    protected int id; //mostly for me to know where to move the player xD
+    protected int id;
     protected String name;
     protected String description;
     protected ArrayList<Item> items = new ArrayList<>();

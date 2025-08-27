@@ -19,7 +19,9 @@ public class Pantry extends Room {
             World.movePlayer(7);
         }
         else if (option == 2){
+            CLI.print("You found a bag of salt!");
             World.addItem(new Salt());
+            World.hasSalt = true;
         }
     }
     public void print(){

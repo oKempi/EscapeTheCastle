@@ -33,7 +33,7 @@ public class Bathroom extends Room{
             World.cause = "Because you didn't have sword the murderer killed you!";
         }
         else if (!murderKilled) {
-            CLI.print("There was a murderer behind the door which you couldn't have foreseen.\nThankfully you had had a sword and had scared him so he gave up.\nYou let him be and gave you a key as a gift for your mercy.");
+            CLI.print("There was a murderer behind the door which you couldn't have foreseen.\nThankfully you had had a sword and had scared him so he gave up.\nYou let him be and gave you a silver coin as a gift for your mercy.");
             World.addItem(new Coin());
         }
     }

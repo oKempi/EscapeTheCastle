@@ -17,6 +17,8 @@ public class World {
     public static Boolean hasSword = false;
     public static Boolean hasBook = false;
     public static Boolean hasGold = false;
+    public static Boolean hasMeat = false;
+    public static Boolean hasSalt = false;
 
     public static void aboutRoom(){
         rooms.get(currentRoom).print();

@@ -5,7 +5,7 @@ import UI.CLI;
 
 import java.util.Random;
 
-public class KnightsHallBig extends Room { //here, you can move the sword
+public class KnightsHallBig extends Room {
     private int id = 4;
     private final String name = "Big knight's hall";
     private final String description = "The hall is really spacious with many, fully equipped, armour stands and big, fancy chandeliers.";

@@ -13,7 +13,7 @@ public class Balcony extends Room {
     private Boolean condor = false;
     private final int optionNum = 4;
 
-    public void printOptions(){ //done?
+    public void printOptions(){
         CLI.print("[1] Go back through the glass doors back into the library");
         CLI.print("[2] Try and jump down the balcony");
         CLI.print("[3] Try feeding the condor something");
@@ -30,7 +30,7 @@ public class Balcony extends Room {
         if(option == 3){
             if(World.items.stream().anyMatch(item -> item instanceof Seeds)){
                 World.cause = "By feeding the condor seeds, it now has energy and as a sign of thank you it takes you somewhere far away.";
-                World.movePlayer(-1);
+                World.gameEnded = true;
             }
             else{CLI.print("You do not have anything the condor would like. Try and find something!");}
         }

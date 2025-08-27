@@ -40,15 +40,15 @@ public class Laboratory extends Room {
                     CLI.print("[" + i + "]" + World.items.get(i - 2));
                 }
                 for(int i = 0; i < 3; i++){
-                    int choice = CLI.getInput();//TODO check if option is viable (continue [use it]) else(call the method again)
-                    if(choice < 0 || choice - 1 > World.items.size()){ //maybe use "do while" instead
-                        return;
+                    int choice = 0; //CLI.getInput();
+                    do{
+                        choice = CLI.getInput();//TODO check if option is viable (continue [use it]) else(call the method again)
                     }
-                    else if (putIn.contains(World.items.get(choice - 1))){
+                    while (choice < 0 || choice - 1 > World.items.size());
+                    if (putIn.contains(World.items.get(choice - 1))){
                         CLI.print("Item was already used");
                     }
                     else{putIn.add(World.items.get(choice - 1)); CLI.print("Added: " + World.items.get(choice - 1));}
-					//to here
                 }
                 int success = 0;
                 for (Item item : putIn) {

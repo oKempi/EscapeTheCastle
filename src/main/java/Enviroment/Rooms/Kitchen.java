@@ -9,7 +9,7 @@ public class Kitchen extends Room {
     private int id = 7;
     private String name = "Kitchen";
     private String description = "The room is one of the biggest you've seen in this castle. There is a stove, some ancient machine and other things you'd find in a kitchen.";
-    private int optionNum = 5; //a LOT
+    private int optionNum = 5;
     private int success = 0;
 
     public void printOptions(){
@@ -17,14 +17,9 @@ public class Kitchen extends Room {
         CLI.print("[2] Go the big knight's hall");
         CLI.print("[3] Go to the pantry");
         CLI.print("[4] Interact with the machine");
-        for (Item i : World.items){
-            if (i instanceof Meat || i instanceof Salt){
-                success++;
-            }
-        }
-        if (success == 2){
+        if(World.hasMeat && World.hasSalt){
+            CLI.print("[5] Try cooking something");
             optionNum = 6;
-            CLI.print("[5] Try to cook something");
         }
     }
     public void act(int option){
@@ -48,7 +43,7 @@ public class Kitchen extends Room {
             }
             CLI.print("You don't have anything that would fit in the machine.");
         }
-        else if (option == 5 && success == 2){
+        else if (option == 5 && World.hasMeat && World.hasSalt){
             for (Item i : World.items){
                 if (i instanceof Meat || i instanceof Salt){
                     World.removeItem(i);
