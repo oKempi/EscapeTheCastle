@@ -18,7 +18,7 @@ public class Library extends Room {
     public void printOptions(){
         CLI.print("[1] Go through beautiful glass doors onto balcony");
         CLI.print("[2] Go down the stairs to get to the main hall");
-        CLI.print("[3] Inspect the library"); //like 50/50 chance to find the book
+        CLI.print("[3] Inspect the library");
         CLI.print("[4] Use the oak doors to get to small Knight's hall");
     }
     public void act(int option){
@@ -45,6 +45,7 @@ public class Library extends Room {
             World.movePlayer(3);
         }
     }
+
     public void print(){
         CLI.print("You are in " + name);
         CLI.print(description);

@@ -1,14 +1,9 @@
 package Enviroment.Rooms;
 import Core.World;
 import Enviroment.Item;
-import Enviroment.Items.Meat;
-import Enviroment.Items.Salt;
-import Enviroment.Items.Seeds;
-import Enviroment.Items.Steak;
+import Enviroment.Items.*;
 import Enviroment.Room;
 import UI.CLI;
-
-import java.util.Random;
 
 public class Kitchen extends Room {
     private int id = 7;
@@ -47,8 +42,11 @@ public class Kitchen extends Room {
                 if (i instanceof Coin){
                     World.removeItem(i);
                     World.addItem(new Seeds());
+                    CLI.print("The machine gave you seeds for a coin!");
+                    return;
                 }
             }
+            CLI.print("You don't have anything that would fit in the machine.");
         }
         else if (option == 5 && success == 2){
             for (Item i : World.items){

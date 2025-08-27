@@ -1,6 +1,7 @@
 package Enviroment.Rooms;
 import Core.World;
 import Enviroment.Item;
+import Enviroment.Items.Coin;
 import Enviroment.Items.Gold;
 import Enviroment.Items.MercuryBottle;
 import Enviroment.Room;
@@ -11,7 +12,7 @@ import java.util.List;
 public class Laboratory extends Room {
     private int id = 6;
     private String name = "Secret laboratory";
-    private String description = "The laboratory is quite small but equipped very well with a alchemy table in the middle of the room.";
+    private String description = "The laboratory is quite small but equipped very well with an alchemy table in the middle of the room.";
     private final int optionNum = 4;
 
     public void printOptions(){
@@ -34,14 +35,13 @@ public class Laboratory extends Room {
             CLI.print("Alchemy table:");
             CLI.print("You have exactly 2 spots in which you can put any of your items.");
             if(!World.items.isEmpty()){
-                CLI.print("[0] Stop interacting with the alchemy table");
-                for(int i = 1; i < World.items.size(); i++){
-                    CLI.print("[" + i + "]" + World.items.get(i - 1));
-                }//put in for loop?
+                CLI.print("[1] Stop interacting with the alchemy table");
+                for(int i = 2; i < World.items.size(); i++){
+                    CLI.print("[" + i + "]" + World.items.get(i - 2));
+                }
                 for(int i = 0; i < 3; i++){
-                    int choice = CLI.getInput(1);//TODO refactor this to make it all possible and working!
-					//from here
-                    if(choice < 0 || choice - 1 > World.items.size()){ //maybe use do while instead
+                    int choice = CLI.getInput();//TODO check if option is viable (continue [use it]) else(call the method again)
+                    if(choice < 0 || choice - 1 > World.items.size()){ //maybe use "do while" instead
                         return;
                     }
                     else if (putIn.contains(World.items.get(choice - 1))){

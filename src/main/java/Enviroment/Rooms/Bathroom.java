@@ -1,13 +1,14 @@
 package Enviroment.Rooms;
 import Core.World;
+import Enviroment.Items.Coin;
 import Enviroment.Room;
 import UI.CLI;
 
 public class Bathroom extends Room{
     private int id = 10;
     private String name = "Bathroom";
-    private String description = "Surprisingly ordinary and clean bathroom.";
-    private final int optionNum = 4;
+    private String description = "Surprisingly ordinary but clean bathroom.";
+    private final int optionNum = 3;
     private Boolean murderKilled = false;
 
     public void printOptions(){

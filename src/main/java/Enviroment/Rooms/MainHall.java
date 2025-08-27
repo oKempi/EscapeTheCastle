@@ -15,9 +15,14 @@ public class MainHall extends Room{
         CLI.print("[3] Go to the big knight's hall");
     }
     public void act(int option){
-        if(option == 1){
+        if(option == 1 && !World.hasGold){
             World.cause = "you opened the door to go and calm the angry mob down. Instead they they immediately pierced you with knives or axes!";//když se u nás chlapi poperou reference ;)
             World.movePlayer(-1);
+            return;
+        }
+        if(option == 1){
+            World.gameEnded = true;
+            World.cause = "You partially opened the door and tossed the lump of gold among the angry mob. The whole mob immediately started fighting over who gets it.\nYou used this opportunity and fled from there before anyone could notice you!";
             return;
         }
         if(option == 2){

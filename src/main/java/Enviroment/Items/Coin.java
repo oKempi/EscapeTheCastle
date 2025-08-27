@@ -1,4 +1,4 @@
-package Enviroment.Rooms;
+package Enviroment.Items;
 import Enviroment.Item;
 
 public class Coin extends Item {

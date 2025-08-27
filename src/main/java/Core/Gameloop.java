@@ -2,7 +2,7 @@ package Core;
 import UI.CLI;
 import Utilities.RoomAdder;
 
-public class Gameloop{
+public class Gameloop{ //TODO projdi komentáře
     public static void main(String[] args){
         //adds all the rooms
         try{
@@ -29,7 +29,7 @@ public class Gameloop{
             CLI.print("========================");
         }//ends the game
         CLI.print("You lost because");
-        CLI.print(World.cause); //hopefully interesting enough 少
+        CLI.print(World.cause);
         CLI.getInput();
         System.exit(0);
     }

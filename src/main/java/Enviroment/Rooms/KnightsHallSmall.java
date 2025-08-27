@@ -36,7 +36,7 @@ public class KnightsHallSmall extends Room{
             return;
         }
         if(option == 4 && World.isFireplaceOpen()){
-            World.movePlayer(5);//not made yet!
+            World.movePlayer(5);
         }
     }
 

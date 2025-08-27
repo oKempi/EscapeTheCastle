@@ -10,7 +10,7 @@ public class RoyalBedroom extends Room {
     private int id = 8;
     private String name = "Royal bedroom";
     private String description = "There is a giant bed on the far side of the room with doors leading somewhere next to it. There is also a dog, it seems there might be something under it!";
-    private final int optionNum = 3;
+    private final int optionNum = 4;
 
     public void printOptions(){
         CLI.print("[1] Go through the doors");
